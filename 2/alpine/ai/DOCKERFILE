@@ -5,6 +5,9 @@ COPY /2/alpine/ai/patch_code.sh /tmp
 # Make sure we can execute it
 RUN chmod +x /tmp/patch_code.sh
 
+# Copy the html file for inserting the AI bootstrap code
+COPY /2/alpine/ai/app-insights-js-init.htm /tmp
+
 # Add app-insights globally
 RUN npm install -g applicationinsights
 # Link app insights to avoid rebuild/validate projects npm package tree
